@@ -1,0 +1,38 @@
+[
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+    "location": [
+      "StructureDefinition",
+      "Line 1, Col 2"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "sdf-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]",
+    "location": [
+      "StructureDefinition",
+      "Line 1, Col 1"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "eld-1: If there are no discriminators, there must be a definition [discriminator.exists() or description.exists()]",
+    "location": [
+      "StructureDefinition.differential.element[2].slicing",
+      "Line 1, Col 1335"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "eld-1: If there are no discriminators, there must be a definition [discriminator.exists() or description.exists()]",
+    "location": [
+      "StructureDefinition.differential.element[4].slicing",
+      "Line 1, Col 1703"
+    ]
+  }
+]

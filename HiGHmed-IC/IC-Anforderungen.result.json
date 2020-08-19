@@ -1,0 +1,35 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">WARNING</td><td>[CodeSystem, Line 1, Col 1]</td><td><pre>csd-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">WARNING</td>\n\t\t\t\t<td>[CodeSystem, Line 1, Col 2]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>dom-6: A resource should have narrative for robust management [text.div.exists()]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[CodeSystem]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>CodeSystem https://highmed.infectioncontrol.de/fhir/core/CodeSystem/IC-Anforderungen has an 'all system' value set of https://highmed.infectioncontrol.de/fhir/core/ValueSet/IC-Anforderungen, but the include has extra details</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+  },
+  "issue": [
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "csd-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]",
+      "location": [
+        "CodeSystem",
+        "Line 1, Col 1"
+      ]
+    },
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+      "location": [
+        "CodeSystem",
+        "Line 1, Col 2"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "CodeSystem https://highmed.infectioncontrol.de/fhir/core/CodeSystem/IC-Anforderungen has an 'all system' value set of https://highmed.infectioncontrol.de/fhir/core/ValueSet/IC-Anforderungen, but the include has extra details",
+      "location": [
+        "CodeSystem"
+      ]
+    }
+  ]
+}

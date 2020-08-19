@@ -1,0 +1,45 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">WARNING</td><td>[ImplementationGuide, Line 1, Col 2]</td><td><pre>dom-6: A resource should have narrative for robust management [text.div.exists()]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">WARNING</td>\n\t\t\t\t<td>[ImplementationGuide, Line 1, Col 1]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>ig-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[ImplementationGuide, Line 1, Col 2]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.packageId': minimum required = 1, but only found 0</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[ImplementationGuide.definition, Line 1, Col 272]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.definition.resource': minimum required = 1, but only found 0</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+  },
+  "issue": [
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+      "location": [
+        "ImplementationGuide",
+        "Line 1, Col 2"
+      ]
+    },
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "ig-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]",
+      "location": [
+        "ImplementationGuide",
+        "Line 1, Col 1"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.packageId': minimum required = 1, but only found 0",
+      "location": [
+        "ImplementationGuide",
+        "Line 1, Col 2"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.definition.resource': minimum required = 1, but only found 0",
+      "location": [
+        "ImplementationGuide.definition",
+        "Line 1, Col 272"
+      ]
+    }
+  ]
+}

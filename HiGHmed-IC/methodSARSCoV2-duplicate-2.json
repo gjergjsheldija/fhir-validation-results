@@ -1,0 +1,71 @@
+{
+  "resourceType": "ValueSet",
+  "id": "covid19example-de-vs-methodSARSCoV2",
+  "url": "https://charite.infectioncontrol.de/fhir/ValueSet/methodSARSCoV2",
+  "version": "0.1",
+  "name": "MethodSARSCoV2",
+  "title": "SARS-CoV-2-Methode",
+  "status": "draft",
+  "date": "2020-04-01",
+  "description": "SARS-CoV-2-Methode",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "9718006",
+            "display": "Polymerase chain reaction analysis (procedure)"
+          },
+          {
+            "code": "398545005",
+            "display": "Nucleic acid assay (procedure)"
+          },
+          {
+            "code": "414464004",
+            "display": "Immunoassay method (procedure)"
+          },
+          {
+            "code": "76978006",
+            "display": "Enzyme-linked immunosorbent assay (procedure)"
+          },
+          {
+            "code": "30662005",
+            "display": "Fluorescent immunoassay (procedure)"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "9718006",
+        "display": "Polymerase chain reaction analysis (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "398545005",
+        "display": "Nucleic acid assay (procedure)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "414464004",
+        "display": "Immunoassay method (procedure)",
+        "contains": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "76978006",
+            "display": "Enzyme-linked immunosorbent assay (procedure)"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "30662005",
+            "display": "Fluorescent immunoassay (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">ERROR</td><td>[Encounter.account, Line 1, Col 1763]</td><td><pre>This property must be an Array, not an Object</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Encounter.hospitalization.extension, Line 1, Col 1469]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>This property must be an Array, not an Object</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">WARNING</td>\n\t\t\t\t<td>[Encounter, Line 1, Col 2]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>dom-6: A resource should have narrative for robust management [text.div.exists()]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">WARNING</td>\n\t\t\t\t<td>[Encounter.class, Line 1, Col 167]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Could not confirm that the codes provided are in the value set http://terminology.hl7.org/ValueSet/v3-ActEncounterCode, and a code should come from this value set unless it has no suitable code</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">INFORMATION</td>\n\t\t\t\t<td>[Encounter.reasonCode[0], Line 1, Col 547]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/encounter-reason (http://hl7.org/fhir/ValueSet/encounter-reason), and a code is recommended to come from this value set) (codes = https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/Aufnahmeanlass#E)</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">INFORMATION</td>\n\t\t\t\t<td>[Encounter.reasonCode[1], Line 1, Col 785]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/encounter-reason (http://hl7.org/fhir/ValueSet/encounter-reason), and a code is recommended to come from this value set) (codes = https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/Aufnahmegrund#01)</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">WARNING</td>\n\t\t\t\t<td>[Encounter.account[0].identifier.type, Line 1, Col 1907]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/identifier-type (http://hl7.org/fhir/ValueSet/identifier-type), and a code should come from this value set unless it has no suitable code) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#VN)</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Encounter.hospitalization.extension[0]]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Extension_EXT_URL_Absolute</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "This property must be an Array, not an Object",
+      "location": [
+        "Encounter.account",
+        "Line 1, Col 1763"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "This property must be an Array, not an Object",
+      "location": [
+        "Encounter.hospitalization.extension",
+        "Line 1, Col 1469"
+      ]
+    },
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+      "location": [
+        "Encounter",
+        "Line 1, Col 2"
+      ]
+    },
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Could not confirm that the codes provided are in the value set http://terminology.hl7.org/ValueSet/v3-ActEncounterCode, and a code should come from this value set unless it has no suitable code",
+      "location": [
+        "Encounter.class",
+        "Line 1, Col 167"
+      ]
+    },
+    {
+      "severity": "information",
+      "code": "processing",
+      "diagnostics": "None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/encounter-reason (http://hl7.org/fhir/ValueSet/encounter-reason), and a code is recommended to come from this value set) (codes = https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/Aufnahmeanlass#E)",
+      "location": [
+        "Encounter.reasonCode[0]",
+        "Line 1, Col 547"
+      ]
+    },
+    {
+      "severity": "information",
+      "code": "processing",
+      "diagnostics": "None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/encounter-reason (http://hl7.org/fhir/ValueSet/encounter-reason), and a code is recommended to come from this value set) (codes = https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/Aufnahmegrund#01)",
+      "location": [
+        "Encounter.reasonCode[1]",
+        "Line 1, Col 785"
+      ]
+    },
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/identifier-type (http://hl7.org/fhir/ValueSet/identifier-type), and a code should come from this value set unless it has no suitable code) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#VN)",
+      "location": [
+        "Encounter.account[0].identifier.type",
+        "Line 1, Col 1907"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Extension_EXT_URL_Absolute",
+      "location": [
+        "Encounter.hospitalization.extension[0]"
+      ]
+    }
+  ]
+}

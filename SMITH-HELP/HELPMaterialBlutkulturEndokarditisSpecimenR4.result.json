@@ -1,0 +1,137 @@
+[
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+    "location": [
+      "StructureDefinition",
+      "Line 1, Col 2"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[1].type[0].code",
+      "Line 1, Col 5638"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "The Coding references a value set, not a code system (\"http://terminology.hl7.org/ValueSet/v2-0487\")",
+    "location": [
+      "StructureDefinition.snapshot.element[12].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 26706"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "Invalid System URI: http://terminology.hl7.org/ValueSet/v2-0487 - cannot use a value set URI as a system",
+    "location": [
+      "StructureDefinition.snapshot.element[12].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 26706"
+    ]
+  },
+  {
+    "severity": "information",
+    "code": "processing",
+    "diagnostics": "Code System URI \"http://terminology.hl7.org/ValueSet/v2-0487\" is unknown so the code cannot be validated",
+    "location": [
+      "StructureDefinition.snapshot.element[12].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 26706"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[18].type[0].code",
+      "Line 1, Col 39544"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[26].type[0].code",
+      "Line 1, Col 58070"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[29].type[0].code",
+      "Line 1, Col 64294"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[40].type[0].code",
+      "Line 1, Col 85271"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[48].type[0].code",
+      "Line 1, Col 100116"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[54].type[0].code",
+      "Line 1, Col 111820"
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "The value provided (\"http://hl7.org/fhirpath/System.String\") is not in the value set http://hl7.org/fhir/ValueSet/defined-types (http://hl7.org/fhir/ValueSet/defined-types), and a code should come from this value set unless it has no suitable code) (error message = Unknown code {null}http://hl7.org/fhirpath/System.String)",
+    "location": [
+      "StructureDefinition.snapshot.element[57].type[0].code",
+      "Line 1, Col 118026"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "The Coding references a value set, not a code system (\"http://terminology.hl7.org/ValueSet/v2-0487\")",
+    "location": [
+      "StructureDefinition.differential.element[0].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 143832"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "Invalid System URI: http://terminology.hl7.org/ValueSet/v2-0487 - cannot use a value set URI as a system",
+    "location": [
+      "StructureDefinition.differential.element[0].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 143832"
+    ]
+  },
+  {
+    "severity": "information",
+    "code": "processing",
+    "diagnostics": "Code System URI \"http://terminology.hl7.org/ValueSet/v2-0487\" is unknown so the code cannot be validated",
+    "location": [
+      "StructureDefinition.differential.element[0].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 143832"
+    ]
+  }
+]

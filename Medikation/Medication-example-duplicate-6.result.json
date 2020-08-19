@@ -1,0 +1,63 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Medication, Line 1, Col 2]</td><td><pre>dom-6: A resource should have narrative for robust management [text.div.exists()]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Medication.code.coding[0], Line 1, Col 211]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Unknown code {http://fhir.de/CodeSystem/ifa/pzn}03705422 for &quot;http://fhir.de/CodeSystem/ifa/pzn#03705422&quot;</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Medication.code.coding[1], Line 1, Col 359]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Unknown code {http://fhir.de/CodeSystem/dimdi/atc}V06DC01 for &quot;http://fhir.de/CodeSystem/dimdi/atc#V06DC01&quot;</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Medication.ingredient[0].item.ofType(CodeableConcept).coding[0], Line 1, Col 870]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Unknown code {http://fhir.de/CodeSystem/ask}12829 for &quot;http://fhir.de/CodeSystem/ask#12829&quot;</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Medication.ingredient[1].item.ofType(CodeableConcept).coding[0], Line 1, Col 1862]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Unknown code {http://fhir.de/CodeSystem/ask}00343 for &quot;http://fhir.de/CodeSystem/ask#00343&quot;</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Medication.meta.profile[0], Line 1, Col 2]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Profile reference &quot;https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication&quot; could not be resolved, so has not been checked</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+  },
+  "issue": [
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+      "location": [
+        "Medication",
+        "Line 1, Col 2"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Unknown code {http://fhir.de/CodeSystem/ifa/pzn}03705422 for \"http://fhir.de/CodeSystem/ifa/pzn#03705422\"",
+      "location": [
+        "Medication.code.coding[0]",
+        "Line 1, Col 211"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Unknown code {http://fhir.de/CodeSystem/dimdi/atc}V06DC01 for \"http://fhir.de/CodeSystem/dimdi/atc#V06DC01\"",
+      "location": [
+        "Medication.code.coding[1]",
+        "Line 1, Col 359"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Unknown code {http://fhir.de/CodeSystem/ask}12829 for \"http://fhir.de/CodeSystem/ask#12829\"",
+      "location": [
+        "Medication.ingredient[0].item.ofType(CodeableConcept).coding[0]",
+        "Line 1, Col 870"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Unknown code {http://fhir.de/CodeSystem/ask}00343 for \"http://fhir.de/CodeSystem/ask#00343\"",
+      "location": [
+        "Medication.ingredient[1].item.ofType(CodeableConcept).coding[0]",
+        "Line 1, Col 1862"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Profile reference \"https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/Medication\" could not be resolved, so has not been checked",
+      "location": [
+        "Medication.meta.profile[0]",
+        "Line 1, Col 2"
+      ]
+    }
+  ]
+}

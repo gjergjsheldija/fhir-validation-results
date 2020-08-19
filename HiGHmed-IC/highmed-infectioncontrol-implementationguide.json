@@ -1,0 +1,125 @@
+{
+  "resourceType": "ImplementationGuide",
+  "url": "https://simplifier.net/guide/highmed-infectioncontrol-implementationguide",
+  "name": "HiGHmed - Infection Control - ImplementationGuide",
+  "status": "draft",
+  "fhirVersion": [
+    "4.0.0"
+  ],
+  "definition": {
+    "page": {
+      "nameUrl": "IGUseCaseInfectionControl.md",
+      "title": "IG Use Case Infection Control",
+      "generation": "markdown",
+      "page": [
+        {
+          "nameUrl": "HiGHmed-duplicate-2.md",
+          "title": "HiGHmed",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "BeschreibungUseCase.md",
+          "title": "Beschreibung Use Case",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Referenzen.md",
+          "title": "Referenzen",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "Informationsmodell.md",
+          "title": "Informationsmodell",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "Datenstzeinkl.Beschreibung.md",
+              "title": "Datensätze inkl. Beschreibung",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "TechnischeImplementierung.md",
+          "title": "Technische Implementierung",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "FHIRProfile.md",
+              "title": "FHIR Profile",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "Observation.md",
+                  "title": "Observation",
+                  "generation": "markdown",
+                  "page": [
+                    {
+                      "nameUrl": "Erregernachweis.md",
+                      "title": "Erregernachweis",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "ErregerQuantitativetest.md",
+                      "title": "Erreger Quantitative test",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "Observationmitstringvalues.md",
+                      "title": "Observation mit string values",
+                      "generation": "markdown"
+                    },
+                    {
+                      "nameUrl": "Antibiogramm.md",
+                      "title": "Antibiogramm",
+                      "generation": "markdown",
+                      "page": [
+                        {
+                          "nameUrl": "AntibiotikumMessungen.md",
+                          "title": "Antibiotikum Messungen",
+                          "generation": "markdown"
+                        }
+                      ]
+                    },
+                    {
+                      "nameUrl": "MREKlasse.md",
+                      "title": "MRE Klasse",
+                      "generation": "markdown"
+                    }
+                  ]
+                },
+                {
+                  "nameUrl": "Specimen.md",
+                  "title": "Specimen",
+                  "generation": "markdown",
+                  "page": [
+                    {
+                      "nameUrl": "Probe.md",
+                      "title": "Probe",
+                      "generation": "markdown"
+                    }
+                  ]
+                },
+                {
+                  "nameUrl": "ServiceRequest.md",
+                  "title": "ServiceRequest",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "DiagnosticReport.md",
+                  "title": "DiagnosticReport",
+                  "generation": "markdown"
+                }
+              ]
+            },
+            {
+              "nameUrl": "Terminologien.md",
+              "title": "Terminologien",
+              "generation": "markdown"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+
+{
+"resourceType": "OperationOutcome",
+"text": {
+"status": "generated",
+"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">WARNING</td><td>[Patient, Line 1, Col 2]</td><td><pre>dom-6: A resource should have narrative for robust management [text.div.exists()]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">WARNING</td>\n\t\t\t\t<td>[Patient.identifier[1].type, Line 32, Col 20]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/identifier-type (http://hl7.org/fhir/ValueSet/identifier-type), and a code should come from this value set unless it has no suitable code) (codes = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV)</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[Patient.meta.profile[0], Line 1, Col 2]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Profile reference "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient" could not be resolved, so has not been checked</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+},
+"issue": [
+{
+"severity": "warning",
+"code": "processing",
+"diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+"location": [
+"Patient",
+"Line 1, Col 2"
+]
+},
+{
+"severity": "warning",
+"code": "processing",
+"diagnostics": "None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/identifier-type (http://hl7.org/fhir/ValueSet/identifier-type), and a code should come from this value set unless it has no suitable code) (codes = http://fhir.de/CodeSystem/identifier-type-de-basis#GKV)",
+"location": [
+"Patient.identifier[1].type",
+"Line 32, Col 20"
+]
+},
+{
+"severity": "error",
+"code": "processing",
+"diagnostics": "Profile reference \"https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient\" could not be resolved, so has not been checked",
+"location": [
+"Patient.meta.profile[0]",
+"Line 1, Col 2"
+]
+}
+]
+}

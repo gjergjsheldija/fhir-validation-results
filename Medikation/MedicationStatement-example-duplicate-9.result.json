@@ -1,0 +1,36 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">WARNING</td><td>[MedicationStatement, Line 1, Col 2]</td><td><pre>dom-6: A resource should have narrative for robust management [text.div.exists()]</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[MedicationStatement.dosage[0].timing.repeat.periodUnit, Line 1, Col 840]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>The value provided (&quot;wk&quot;) is not in the value set http://hl7.org/fhir/ValueSet/units-of-time|4.0.1 (http://hl7.org/fhir/ValueSet/units-of-time), and a code is required from this value set) (error message = Unknown code {null}wk)</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t\t<tr>\n\t\t\t\t<td style=\"font-weight: bold;\">ERROR</td>\n\t\t\t\t<td>[MedicationStatement.meta.profile[0], Line 1, Col 2]</td>\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<td><pre>Profile reference &quot;https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement&quot; could not be resolved, so has not been checked</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>"
+  },
+  "issue": [
+    {
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+      "location": [
+        "MedicationStatement",
+        "Line 1, Col 2"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "The value provided (\"wk\") is not in the value set http://hl7.org/fhir/ValueSet/units-of-time|4.0.1 (http://hl7.org/fhir/ValueSet/units-of-time), and a code is required from this value set) (error message = Unknown code {null}wk)",
+      "location": [
+        "MedicationStatement.dosage[0].timing.repeat.periodUnit",
+        "Line 1, Col 840"
+      ]
+    },
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Profile reference \"https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement\" could not be resolved, so has not been checked",
+      "location": [
+        "MedicationStatement.meta.profile[0]",
+        "Line 1, Col 2"
+      ]
+    }
+  ]
+}

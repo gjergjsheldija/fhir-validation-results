@@ -1,0 +1,34 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "mre-klasse",
+  "url": "https://highmed.infectioncontrol.de/fhir/core/CodeSystem/IC-Anforderungen",
+  "version": "0.1",
+  "name": "Use Case Infection Control Anforderungen",
+  "title": "Use Case Infection Control Anforderungen",
+  "status": "draft",
+  "date": "2020-04-27",
+  "description": "Das CodeSystem enthält die Use Case Infection Control Anforderungen",
+  "caseSensitive": false,
+  "valueSet": "https://highmed.infectioncontrol.de/fhir/core/ValueSet/IC-Anforderungen",
+  "hierarchyMeaning": "is-a",
+  "content": "complete",
+  "count": 7,
+  "concept": [
+    {
+      "code": "01",
+      "display": "MRSA"
+    },
+    {
+      "code": "02",
+      "display": "VRE"
+    },
+    {
+      "code": "03",
+      "display": "3MRGN"
+    },
+    {
+      "code": "04",
+      "display": "4MRGN"
+    }
+  ]
+}

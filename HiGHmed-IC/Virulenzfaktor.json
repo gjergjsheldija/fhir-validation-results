@@ -1,0 +1,381 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://highmed.infectioncontrol.de/fhir/core/StructureDefinition/Virulenzfaktor",
+  "version": "0.9",
+  "name": "Virulenzfaktor",
+  "title": "HiGHmed- Infection Control- Virulenzfaktor",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "https://www.Medizininformatik-Initiative.de",
+  "description": "Dieses Profil beschreibt den Virulenzfaktor des Erregers in HiGHmed Use Case Infection Control",
+  "purpose": "Dieses Profil beschreibt den Virulenzfaktor des Erregers in HiGHmed Use Case Infection Control.",
+  "copyright": "CC-BY (https://creativecommons.org/licenses/by/2.0/de/)",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.id",
+        "path": "Observation.id",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.meta.source",
+        "path": "Observation.meta.source",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.meta.profile",
+        "path": "Observation.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier",
+        "path": "Observation.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "type"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode",
+        "path": "Observation.identifier",
+        "sliceName": "analyseBefundCode",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.type",
+        "path": "Observation.identifier.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "OBI"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.type.coding",
+        "path": "Observation.identifier.type.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.type.coding:observationInstanceV2",
+        "path": "Observation.identifier.type.coding",
+        "sliceName": "observationInstanceV2",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.type.coding:observationInstanceV2.system",
+        "path": "Observation.identifier.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.type.coding:observationInstanceV2.code",
+        "path": "Observation.identifier.type.coding.code",
+        "min": 1,
+        "fixedCode": "OBI",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.system",
+        "path": "Observation.identifier.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.value",
+        "path": "Observation.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.identifier:analyseBefundCode.assigner",
+        "path": "Observation.identifier.assigner",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.status",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint",
+            "valueString": "default: final"
+          }
+        ],
+        "path": "Observation.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding",
+        "path": "Observation.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:loinc-observation",
+        "path": "Observation.category.coding",
+        "sliceName": "loinc-observation",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:loinc-observation.system",
+        "path": "Observation.category.coding.system",
+        "min": 1,
+        "fixedUri": "http://loinc.org",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:loinc-observation.code",
+        "path": "Observation.category.coding.code",
+        "min": 1,
+        "fixedCode": "18725-2",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:loinc-observation.display",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          }
+        ],
+        "path": "Observation.category.coding.display",
+        "fixedString": "MICROBIOLOGY STUDIES"
+      },
+      {
+        "id": "Observation.category.coding:observation-category",
+        "path": "Observation.category.coding",
+        "sliceName": "observation-category",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:observation-category.system",
+        "path": "Observation.category.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category.coding:observation-category.code",
+        "path": "Observation.category.coding.code",
+        "min": 1,
+        "fixedCode": "laboratory",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Virulenzfaktor",
+        "definition": "Klassifizierung multiresistenter gramnegativer Stäbchen auf Basisihrer phänotypischen Resistenzeigenschaften (Robert Koch Institut)",
+        "mustSupport": true,
+        "binding": {
+          "strength": "example"
+        }
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "fixedCode": "MRE Klasse"
+      },
+      {
+        "id": "Observation.code.coding.display",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          }
+        ],
+        "path": "Observation.code.coding.display",
+        "fixedString": "MRE Klasse"
+      },
+      {
+        "id": "Observation.code.text",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
+            "valueBoolean": true
+          }
+        ],
+        "path": "Observation.code.text",
+        "fixedString": "Resistenzmechanismus"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference"
+            ],
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/Patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/Versorgungsfall"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "mii-lab-1",
+            "severity": "error",
+            "human": "Datetime must be at least to day",
+            "expression": "($this as dateTime).toString().length() >= 8",
+            "source": "Observation"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "description": "MRE Klasse",
+          "valueSet": "https://highmed.infectioncontrol.de/fhir/core/ValueSet/mre-klassen"
+        }
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://highmed.infectioncontrol.de/fhir/core/StructureDefinition/Specimen"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.specimen.reference",
+        "path": "Observation.specimen.reference",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.specimen.identifier",
+        "path": "Observation.specimen.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+    "location": [
+      "StructureDefinition",
+      "Line 1, Col 2"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "Unknown Code System \"http://hl7.org/fhir/valueset-diagnostic-service-sections.html\"",
+    "location": [
+      "StructureDefinition.differential.element[7].fixed.ofType(CodeableConcept).coding[0]",
+      "Line 1, Col 2540"
+    ]
+  }
+]

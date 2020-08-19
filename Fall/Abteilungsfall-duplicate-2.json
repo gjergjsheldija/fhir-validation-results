@@ -1,0 +1,252 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/Encounter/Abteilungsfall",
+  "version": "0.9",
+  "name": "Abteilungsfall",
+  "status": "draft",
+  "description": "Dieses Profil beschreibt einen Abteilungsfall in der Medizininformatik-Initiative.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "constraint": [
+          {
+            "key": "mii-enc-af-1",
+            "severity": "error",
+            "human": "Das Ende des Abteilungsfalls muss angegeben werden sollte dieser abgeschlossen werden",
+            "expression": "status = 'finished' implies period.end.exists()",
+            "source": "Encounter"
+          },
+          {
+            "key": "mii-enc-af-2",
+            "severity": "error",
+            "human": "Das Ende der Verlegung muss bekannt sein, sollte die Bewegung innerhalb des Versorgungsfalls abgeschlossen sein",
+            "expression": "location.status = 'completed' implies location.period.end.exists()",
+            "source": "Encounter"
+          }
+        ]
+      },
+      {
+        "id": "Encounter.id",
+        "path": "Encounter.id",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.meta",
+        "path": "Encounter.meta",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.meta.source",
+        "path": "Encounter.meta.source",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.meta.profile",
+        "path": "Encounter.meta.profile",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "mustSupport": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "EncounterClass"
+            }
+          ],
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/Abteilungsfallklasse"
+        }
+      },
+      {
+        "id": "Encounter.class.system",
+        "path": "Encounter.class.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class.code",
+        "path": "Encounter.class.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType",
+        "path": "Encounter.serviceType",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType.coding",
+        "path": "Encounter.serviceType.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType.coding:fab",
+        "path": "Encounter.serviceType.coding",
+        "sliceName": "fab",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/ValueSet/Fachabteilungsschluessel"
+        }
+      },
+      {
+        "id": "Encounter.serviceType.coding:fab.system",
+        "path": "Encounter.serviceType.coding.system",
+        "min": 1,
+        "patternUri": "https://www.medizininformatik-initiative.de/fhir/core/modul-fall/CodeSystem/Fachabteilungsschluessel",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType.coding:fab.code",
+        "path": "Encounter.serviceType.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.start",
+        "path": "Encounter.period.start",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.end",
+        "path": "Encounter.period.end",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location",
+        "path": "Encounter.location",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.status",
+        "path": "Encounter.location.status",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.period",
+        "path": "Encounter.location.period",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.period.start",
+        "path": "Encounter.location.period.start",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.period.end",
+        "path": "Encounter.location.period.end",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.partOf",
+        "path": "Encounter.partOf",
+        "min": 1,
+        "type": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ],
+            "code": "Reference",
+            "profile": [
+              "https://www.medizininformatik-initiative.de/fhir/core/StructureDefinition/MII-Reference"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

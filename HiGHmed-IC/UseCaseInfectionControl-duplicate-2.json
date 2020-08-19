@@ -1,0 +1,1763 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "8502ab36-90ac-4e49-9e02-0d7e8af9b25c",
+  "meta": {
+    "lastUpdated": "2020-01-31T11:05:01.794+00:00"
+  },
+  "url": "http://highmed.de/UCIC/fhir/StructureDefinition/UseCaseInfectionControl",
+  "name": "UseCaseInfectionControl",
+  "status": "draft",
+  "date": "2020-01-31T11:05:01.5482866+00:00",
+  "fhirVersion": "4.0.0",
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://example/UCIC/fhir/StructureDefinition/Use Case Infection Control",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "Use Case Infection Control",
+        "path": "Use Case Infection Control",
+        "definition": "Data model for UCIC",
+        "comment": "Data model for UCIC",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Element"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Patient",
+        "path": "Use Case Infection Control.Patient",
+        "label": "KDS Basis Module",
+        "short": "Patient",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Patient.Geburtsdatum",
+        "path": "Use Case Infection Control.Patient.Geburtsdatum",
+        "short": "Geburtsdatum des Patienten",
+        "comment": "FHIR_mapping: Patient.birthDate",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "date",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/date"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Patient.Geschlecht",
+        "path": "Use Case Infection Control.Patient.Geschlecht",
+        "short": "Administratives Geschlecht der Person",
+        "comment": "FHIR_mapping: Patient.gender",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose",
+        "path": "Use Case Infection Control.Diagnose",
+        "short": "Problemliste Diagnosen",
+        "definition": "Angaben über einen einzelnen identifizierten Gesundheitszustand, eine Verletzung, eine Behinderung oder ein Problem, welches das körperliche, geistige und/oder soziale Wohlergehen einer Einzelperson beeinträchtigt.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DiagnoseKodiert",
+        "path": "Use Case Infection Control.Diagnose.DiagnoseKodiert",
+        "short": "Im Bereich der administrativen und statistischen Auswertung wird die Diagnose mit Hilfe von Codiersystemen verschlüsselt. So wird z.B. bei der Abrechnung nach §301 und §295 SGB V die Codierung von Diagnosen mittels ICD-10 GM gesetzlich vorgeschrieben. Weitere Codiersysteme sind z.B. die \"Alpha-ID\", SNOMED CT und ID MACS.",
+        "comment": "FHIR_mapping: Condition.code",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DiagnoseKodiert.Diagnosecode",
+        "path": "Use Case Infection Control.Diagnose.DiagnoseKodiert.Diagnosecode",
+        "short": "Diagnosecode",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DiagnoseKodiert.Codesystem",
+        "path": "Use Case Infection Control.Diagnose.DiagnoseKodiert.Codesystem",
+        "short": "Codesystem für den Diagnosecode, in Deutschland vorrangig ICD-10-GM, aber auch weitere Codesysteme wie Orphanet sollten möglich sein.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DiagnoseKodiert.KatalogtextDiagnosecode",
+        "path": "Use Case Infection Control.Diagnose.DiagnoseKodiert.KatalogtextDiagnosecode",
+        "short": "Zum Diagnosecode kann der assoziierte Text im Codiersystem (Klassentext, Displaytext/-name, Preferred Name, etc.) angegeben werden. Dieser Text entspricht nicht (unbedingt) der freitextlichen Beschreibung einer Diagnose und kann automatisch von einem System anhand des Codes angegeben werden.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Freitextbeschreibung",
+        "path": "Use Case Infection Control.Diagnose.Freitextbeschreibung",
+        "short": "Beschreibung des Problems oder der Diagnose.",
+        "definition": "Wo möglich, ist die Kodierung des Problems oder der Diagnose über eine Terminologie zu bevorzugen.",
+        "comment": "Wird verwendet, um Hintergrund und Kontext, einschließlich Entwicklung, Episoden oder Verschlechterungen, Fortschritt und andere relevante Details über das Problem oder die Diagnose zu liefern",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Lokalisation",
+        "path": "Use Case Infection Control.Diagnose.Lokalisation",
+        "short": "Eine physische Stelle am oder innerhalb des menschlichen Körper",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Lokalisation.NamederKörperstelle",
+        "path": "Use Case Infection Control.Diagnose.Lokalisation.NamederKörperstelle",
+        "short": "Identifikation einer einzelnen physischen Stelle entweder am oder innerhalb des menschlichen Körpers.",
+        "comment": "FHIR_mapping: Condition.bodySite",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Lokalisation.Lateralität",
+        "path": "Use Case Infection Control.Diagnose.Lokalisation.Lateralität",
+        "short": "Die Seite des Körpers, an der sich die identifizierte Körperstelle befindet.",
+        "definition": "Links  [Die linke Körperseite.]\r\nRechts  [Die rechte Körperseite.]\r\nLinks und Rechts  [Beide Körperseiten.]",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DatumErstdiagnose",
+        "path": "Use Case Infection Control.Diagnose.DatumErstdiagnose",
+        "short": "Datum des Auftretens/der Erstdiagnose",
+        "definition": "Geschätzte oder exakte Zeit (bzw. Datum), zu der die Krankheitsanzeichen oder Symptome zum ersten mal beobachtet wurden.",
+        "comment": "FHIR_mapping: Condition.onset",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Feststellungsdatum",
+        "path": "Use Case Infection Control.Diagnose.Feststellungsdatum",
+        "short": "Geschätzte oder exakte Zeit (bzw. Datum), zu der die Diagnose oder das Problem von einer medizinischen Fachkraft festgestellt wurde.",
+        "comment": "FHIR_mapping: Condition.encounter (Reference)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Schweregrad",
+        "path": "Use Case Infection Control.Diagnose.Schweregrad",
+        "short": "Eine Gesamtbeurteilung des Schweregrades des Problems oder der Diagnose.",
+        "definition": "Leicht  [Das Problem oder die Diagnose beeinträchtigt die normale Aktivität nicht, bzw. verursacht nicht bleibende gesundheitliche Schäden, falls es nicht behandelt wird.]\r\nMäßig  [Das Problem oder die Diagnose beeinträchtigt die normale Aktivität oder verursacht bleibende gesundheitliche Schäden, falls es nicht behandelt wird.]\r\nSchwer  [Das Problem oder die Diagnose verhindert die normale Aktivität oder verursacht schwerwiegende gesundheitliche Schäden, falls es nicht behandelt wird.]",
+        "comment": "FHIR_mapping: Condition.stage",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Diagnosedetails",
+        "path": "Use Case Infection Control.Diagnose.Diagnosedetails",
+        "short": "Diagnosebezogene Informationen",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Diagnosedetails.BegründungvonAusnahmen",
+        "path": "Use Case Infection Control.Diagnose.Diagnosedetails.BegründungvonAusnahmen",
+        "short": "Das Auftreten einer Diagnose muss in manchen Fällen zu Abrechnungszwecken begründet werden, z.B. für geschlechtsspezifische Plausibilitätsprüfungen",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Diagnosedetails.Diagnosetyp",
+        "path": "Use Case Infection Control.Diagnose.Diagnosedetails.Diagnosetyp",
+        "short": "Art der Diagnose. Bei der Angabe des Diagnosetyps ist darauf zu achten, dass dieser auch im richtigen Kontext verwendet wird. Zum Beispiel wird es bei der Beschreibung einer Diagnose im Rahmen einer Überweisung nicht den Diagnosetyp \"Entlassdiagnose\" geben.",
+        "definition": "Aufnahmediagnose\r\nOperationsdiagnose\r\nEntlassdiagnose\r\nTodesursache\r\nVersorgungsfallhauptdiagnose\r\nAbteilungsfallhauptdiagnose\r\nSonstige\r\nVersorgungsfallnebendiagnose\r\nAbteilungsfallnebendiagnose",
+        "comment": "FHIR_mapping: Condition.category",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Diagnosedetails.VorhandenbeiAufnahme",
+        "path": "Use Case Infection Control.Diagnose.Diagnosedetails.VorhandenbeiAufnahme",
+        "short": "Ist die Diagnose bei der Aufnahme in die Gesundheiteinrichtung vorhanden?",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "boolean",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/boolean"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Diagnosedetails.VorhandenbeiEntlassung",
+        "path": "Use Case Infection Control.Diagnose.Diagnosedetails.VorhandenbeiEntlassung",
+        "short": "Ist die Diagnose bei Entlassung aus der Gesundheiteinrichtung vorhanden?",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "boolean",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/boolean"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Ätiopathogenese",
+        "path": "Use Case Infection Control.Diagnose.Ätiopathogenese",
+        "short": "Die Ursachen, Gründe oder Erklärung für das Entstehen eines bestimmten Problems/einer Diagnose, dessen/deren auslösenden Faktoren und Entwicklung.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Ätiopathogenese.ÄtiologiederKrankheit",
+        "path": "Use Case Infection Control.Diagnose.Ätiopathogenese.ÄtiologiederKrankheit",
+        "short": "Identifizierung der Ursache der Krankheit oder des abnormalen Zustands",
+        "definition": "Arbeitsrisikofaktoren  [z.B. Asbestexposition]\r\nBiologisch  [z.B. Alter, Geschlecht]\r\nChemische Verletzung  [z. B. Gift, Medikament]\r\nErnährungsrelevante Faktoren  [z. B. Eisenmangel, kohlenhydratreiche Ernährung]\r\nGenetische Herkunft  [z. B Sichelzellenanämie]\r\nImmunologische Herkunft  [z.B. systemische Lupus erythematodes, AIDS (als Grundursache für Kaposis Sarkom)]\r\nInfektion  [z.B. Hepatitis C]\r\nKörperliche Verletzung  [z.B. Kopftrauma, Hitzeerschöpfung, Verletzung durch Strahlenbelastung]\r\nLebenswandel-bezogene Faktoren  [z. B. Rauchen, Alkoholismus]\r\nMetabolisch-endokriner Herkunft  [z. B. Akromegalie, Diabetes]\r\nNeuropsychiatrische Herkunft  [z. B. Alzheimer-Krankheit, Depression]\r\nUmweltexposition  [z.B. UV-Strahlung aussetzen, Feinstaub Aussetzung]\r\nSonstiges  [Sonstige Ursachen, die mit vorgegebenen Werten nicht dargestellt werden können]",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Ätiopathogenese.BeschreibungdesEntstehens",
+        "path": "Use Case Infection Control.Diagnose.Ätiopathogenese.BeschreibungdesEntstehens",
+        "short": "Weitere Beschreibung der Ursachen oder Gründe für das Entstehen (Ätiologie) eines spezifischen Problems/einer Diagnose.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DatumZeitpunktderGenesung",
+        "path": "Use Case Infection Control.Diagnose.DatumZeitpunktderGenesung",
+        "short": "Geschätzte oder exakte Zeit (bzw. Datum), zu der von einer medizinischen Fachkraft die Genesung oder die Remission des Problems oder der Diagnose festgestellt wurde",
+        "comment": "Unvollständige Datumsangaben sind zulässig. Wenn der Patient unter einem Jahr alt ist, dann ist das vollständige Datum oder ein Minimum von Monat und Jahr notwendig, um genaue Altersberechnungen zu ermöglichen - z.B. wenn es zur Entscheidungsunterstützung verwendet wird. Datumswerte, die als \"Alter zum Zeitpunkt der Genesung\" erfasst/importiert werden, sollten anhand des Geburtsdatums der Person in ein Datum umgewandelt werden",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.DiagnosenSicherheit",
+        "path": "Use Case Infection Control.Diagnose.DiagnosenSicherheit",
+        "short": "Grad der Sicherheit, mit der die Diagnose festgestellt wurde.",
+        "definition": "Vermutet  [Die Diagnose wurde mit einem niedrigen Grad an Sicherheit gestellt.]\r\nWahrscheinlich  [Die Diagnose wurde mit einem hohen Maß an Sicherheit gestellt.]\r\nBestätigt  [Die Diagnose wurde anhand anerkannter Kriterien bestätigt.]",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Diagnoseerläuterung",
+        "path": "Use Case Infection Control.Diagnose.Diagnoseerläuterung",
+        "short": "Ergänzende Beschreibung des Problems oder der Diagnose, die nicht anderweitig erfasst wurde",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.LetztesDokumentationsdatum",
+        "path": "Use Case Infection Control.Diagnose.LetztesDokumentationsdatum",
+        "short": "Datum der letzten Aktualisierung der Diagnose bzw. des Problems.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Diagnose.Fallrelation",
+        "path": "Use Case Infection Control.Diagnose.Fallrelation",
+        "short": "Zur Erfassung von Details zur Identifikation eines Falls im Gesundheitswesen.",
+        "comment": "FHIR_mapping: Encounter (Reference)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.BerichtID",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.BerichtID",
+        "short": "Eindeutige Identifikation des Berichts.",
+        "comment": "FHIR_mapping:DiagnosticReport.identifier",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Status",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Status",
+        "short": "Status des gesamten Ergebnisberichts. Hinweis: Dies ist nicht der Status einzelner Berichtskomponenten.",
+        "comment": "Zwischenbefund\r\nEndbefund\r\n\r\nFHIR_mapping: DiagnosticReport.status",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Anforderung",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Anforderung",
+        "short": "Name der Laboruntersuchung, die an der/den Probe(n) durchgeführt wurde.",
+        "comment": "Comment: Ein Laborergebnis kann sich auf ein einzelnes Analyt oder eine Analytgruppe beziehen. Dazu zählen auch komplette Panel an Parametern. Es wird dringend empfohlen, die \"Labortest-Bezeichnung\" anhand einer Terminologie zu kodiereren, wie zum Beispiel LOINC oder SNOMED CT. Beispiel: \"Glukose\", \"Harnstoff\", \"Abstrich\", \"Cortisol\", \"Leberbiopsie\". Der Name kann u.U. auch das Probenmaterial oder den Patientenstatus (z.B. \"Blutzuckerspiegel nüchtern\") oder andere Informationen beinhalten wie \"Kalium (Blutgas)\".\r\nFHIR_mapping: ServiceRequest.code",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.EinsendendeSystemeID",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.EinsendendeSystemeID",
+        "short": "Lokale Auftrags-ID des anfordernden/einsendenden Systems.",
+        "comment": "Comment: Äquivalent zur \"HL7 Placer Order Identifier\".\r\nFHIR_mapping: ServiceRequest.identifier",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.EmpfängerID",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.EmpfängerID",
+        "short": "Lokale Auftrags-ID, die vom auftragsempfangendem System, gewöhnlich dem Laborinformationssystem (LIS) zugewiesen wird.",
+        "comment": "Comment: Die Vergabe einer solchen ID ermöglicht das Nachverfolgen des Auftragsstatus und das Verlinken der Ergebnisse zum Auftrag. Es erlaubt auch das Verwalten von weiteren Erkundigungen und Nachfragen und ist äquivalent zum \"HL7 Filler Order Identifier\"\r\nFHIR_mapping: DiagnosticReport.identifier",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails",
+        "short": "Eine physikalische Probe zur Erforschung, Untersuchung oder Analyse, die von einer Person entnommen wurde oder die sich auf die Person bezieht.",
+        "comment": "Zum Beispiel: Gewebe, Körperflüssigkeit oder Lebensmittel.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.ExternerIdentifikator",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.ExternerIdentifikator",
+        "short": "Eine eindeutige Kennung der Probe, die von einer Organisation außerhalb des Labors wie dem Auftraggeber zugeordnet wurde.",
+        "comment": "FHIR_mapping: Specimen.identifier",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.LaborprobenIdentifikator",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.LaborprobenIdentifikator",
+        "short": "Eine eindeutige Kennung der Probe, die normalerweise vom Labor vergeben wird.",
+        "comment": "Wird manchmal als \"Accession Identifier\" bezeichnet.\r\nFHIR_mapping: Specimen.accession.identifier",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Probenart",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Probenart",
+        "short": "Die Art der Probe",
+        "comment": "Zum Beispiel: Venöses Blut, Bakterienkultur, Zytologie oder Prostatabiopsie. Nach Möglichkeit wird die Kodierung der Probenart mit einer Terminologie bevorzugt.\r\nFHIR_mapping: Specimen.type",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Probenentnahmestelle",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Probenentnahmestelle",
+        "code": [
+          {
+            "system": "http://snomed.info/sct"
+          }
+        ],
+        "short": "Identifizierung der Entnahmestelle, an der die Probe entnommen wurde.",
+        "comment": "FHIR_mapping: Specimen.collection.bodySite",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.ZeitpunktderProbenentnahme",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.ZeitpunktderProbenentnahme",
+        "short": "Das Datum und die Uhrzeit, zu der die Probennahme angeordnet wurde oder stattfand.",
+        "comment": "FHIR_mapping: Specimen.collection.collected.collectedDateTime",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Probennehmers",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Probennehmers",
+        "short": "Die Person oder Organisation die für die Entnahme der Probe verantwortlich war.",
+        "comment": "Dieses Element soll verwendet werden, wenn die Probe bereits abgenommen wurde und der tatsächliche Probennehmer bekannt ist.\r\nFHIR_mapping: Specimen.collection.collector",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.ÜbergeordnetenProbe",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.ÜbergeordnetenProbe",
+        "short": "Eindeutige Kennung der verwandten Probe(n), bei der die Probe in Teilproben aufgeteilt ist.",
+        "comment": "Zum Beispiel: eine bestimmte Probe eines Objektträgers für die Histologie würde einen bestimmten Paraffinwachsblock als Ausgangsprobe haben.\r\nFHIR_mapping: Specimen.parent",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Kommentar",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Probendetails.Kommentar",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails",
+        "short": "Laborergebnis als Panel/Profil von Einzelresultaten. Verbreitet im medizinischen Labor.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Nachweis",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Nachweis",
+        "short": "Die Bezeichnung des Analyt-Resultats",
+        "definition": "Nachweis\r\nKein Nachweis",
+        "comment": "FHIR_mapping: Observation.interpretation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "boolean",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/boolean"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Erregername",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Erregername",
+        "code": [
+          {
+            "system": "http://snomed.info/sct"
+          }
+        ],
+        "short": "(Mess-)Wert des Analyt-Resultats.",
+        "comment": "FHIR_mapping: Observation.value",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Keimzahl",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Keimzahl",
+        "short": "Quantitative Angabe zur Keimzahl, z.B. bei Urinen",
+        "definition": "Units: KbE/ml",
+        "comment": "FHIR_mapping: Observation.value",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Quantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Häufigkeit",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Häufigkeit",
+        "short": "Semiquantitative Angabe zur Keimzahl",
+        "definition": "(+)  [vereinzelt]\r\n+  [spärlich]\r\n++  [mäßig]\r\n+++  [reichlich]\r\n++++  [massenhaft]",
+        "comment": "FHIR_mapping: Observation.interpretation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Virulenzfaktor",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Virulenzfaktor",
+        "short": "Angabe zu untersuchten Virulenzeigenschaften oder -genen, z.B. PVL bei S. aureus oder EHEC bei E. coli.",
+        "comment": "FHIR_mapping: Observation.value",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram",
+        "short": "Laborergebnis als Panel/Profil von Einzelresultaten. Verbreitet im medizinischen Labor.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Antibiotikum",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Antibiotikum",
+        "code": [
+          {
+            "system": "http://loinc.org"
+          }
+        ],
+        "short": "Antibiotikum",
+        "comment": "FHIR_mapping: Observation.code",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Hemmkonzentration",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Hemmkonzentration",
+        "short": "Minimale Hemmkonzentration",
+        "definition": "Units: mg/mL",
+        "comment": "FHIR_mapping: Observation.value",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Quantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Resistenz",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Resistenz",
+        "short": "Zusätzliche Hinweise zur Anwendbarkeit des Referenzbereichs für dieses Resultat oder (codierter) Text, ob das Resultat im Referenzbereich ist oder nicht.",
+        "definition": "R\r\nI\r\nS",
+        "comment": "FHIR_mapping: Observation.interpretation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Kommentar",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Antibiogram.Kommentar",
+        "short": "Kommentar zum Analyt-Resultat, soweit noch nicht in anderen Feldern erfasst.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.MREKlasse",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.MREKlasse",
+        "short": "Angabe zur MRE-Klassifikation des Erregers, z.B. 3MRGN oder 4MRGN. Bei VRE und MRSA kann es zu einer Redundanz zum Resistenzmechanismus \"Methicillin-resistenz\" kommen, dies ist aber problemlos.",
+        "definition": "MRSA  [Methicillin-resistenter Staphylococcus aureus (und CA- community-acquired, LA – lifestock acquired, HA – hospital acquired)]\r\nVRE  [Vancomycin-resistente Enterokokken]\r\nLVRE  [Linezolid-Vancomycin-resistenter Enterokokken]\r\nLRE  [Linezolid-resistente Enterokokken]\r\n2MRGN  [Multiresistente Gramnegative Bakterien (Resistenz gegen 2 der 4 Antibiotikagruppen)]\r\n3MRGN  [Multiresistente Gramnegative Bakterien (Resistenz gegen 3 der 4 Antibiotikagruppen)]\r\n4MRGN  [Multiresistente Gramnegative Bakterien (Resistenz gegen 4 der 4 Antibiotikagruppen)]",
+        "comment": "FHIR_mapping: Observation.value",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Kommentar",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Kommentar",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Resistenzmechanismus",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Resistenzmechanismus",
+        "short": "Bezeichnung des Resistenzmechanismus.",
+        "comment": "Ein bestes Beispiel wäre, die Untersuchung eines „Staphylococcus aureus“ der hier die Bezeichnung des Keims ist\r\nFHIR_mapping: Observation.value",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Isolatsnummer",
+        "path": "Use Case Infection Control.Mikrobiologischerbefund.Erregerdetails.Isolatsnummer",
+        "short": "Reihenfolge aller Analyseergebnisse",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten",
+        "path": "Use Case Infection Control.Bewegungsdaten",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall",
+        "path": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall",
+        "short": "Strukturierte Sammlung von Informationen zu einem Sachverhalt oder Problem, der bzw. das bearbeitet werden muss. Die Bearbeitungsschritte eines Falles werden durch Aktivitäten und Bearbeiter definiert, die dem Fall zugeordnet werden.",
+        "definition": "Zur Repräsentation der administrativen Daten eines Falls (Fallinformationen, Aufnahme, Entlassung) eines Patienten innerhalb einer Einrichtung. Ein “Fall” beginnt mit der Aufnahme ins Krankenhaus an einem Aufnahmedatum und endet mit der Entlassung an einem Entlassungsdatum.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall.Versorgungsfalltyp",
+        "path": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall.Versorgungsfalltyp",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall.Fallklasse",
+        "path": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall.Fallklasse",
+        "short": "Fallklasse",
+        "definition": "Stationär\r\nAmbulant\r\nTeilstationär",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall.Versorgungsfallnummer",
+        "path": "Use Case Infection Control.Bewegungsdaten.Versorgungsfall.Versorgungsfallnummer",
+        "short": "Versorgungsfallnummer",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme",
+        "path": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme",
+        "short": "Patientenaufnahme",
+        "definition": "Wird nur für aufgenommene Patienten verwendet. Es signalisiert den Beginn des Aufenthalts eines Patienten in einer Gesundheitseinrichtung.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme.Versorgungsfallgrund",
+        "path": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme.Versorgungsfallgrund",
+        "short": "Der Umstand, unter dem der Patient aufgenommen wird.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme.ArtderAufnahme",
+        "path": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme.ArtderAufnahme",
+        "short": "Nähere Beschreibung der Art der Aufnahme, z.B. Unfall oder Notfall.",
+        "definition": "Unfall / Notarztwagen\r\nwahlfreie Aufnahme\r\nNotfall ohne Einweisung\r\nEntbindung / Geburt\r\nNeugeborenes\r\nNormalaufnahme\r\ndringliche Aufnahme",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme.Aufnahmedatum",
+        "path": "Use Case Infection Control.Bewegungsdaten.Patientenaufnahme.Aufnahmedatum",
+        "short": "Datum/Zeit, an dem der Patient aufgenommen wurde.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten",
+        "path": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten",
+        "short": "Wird nur für entlassene Patienten verwendet.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.ArtderEntlassung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.ArtderEntlassung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.KlinischerZustanddesPatienten",
+        "path": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.KlinischerZustanddesPatienten",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.Entlassungsdatum",
+        "path": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.Entlassungsdatum",
+        "short": "Datum/Uhrzeit, an dem der Patient entlassen wurde.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.ZusätzlicheInformationen",
+        "path": "Use Case Infection Control.Bewegungsdaten.Entlassungsdaten.ZusätzlicheInformationen",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall",
+        "short": "Abteilungsfall",
+        "definition": "Strukturierte Sammlung von Informationen zu einem Sachverhalt oder Problem, der bzw. das bearbeitet werden muss. Die Bearbeitungsschritte eines Falles werden durch Aktivitäten und Bearbeiter definiert, die dem Fall zugeordnet werden.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Falltyp",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Falltyp",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsfallklasse",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsfallklasse",
+        "short": "Fallklasse",
+        "definition": "Station\r\nOperation\r\nUntersuchung und Behandlung\r\nKonsil\r\nVorstationär\r\nNachstationär\r\nSonstige",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.AbteilungsfallKennung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.AbteilungsfallKennung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Versorgungsfall-Kennung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Versorgungsfall-Kennung",
+        "short": "Versorgungsfall-Kennung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt",
+        "short": "Zugeordnete Fachabteilung",
+        "definition": "Der Standort umfasst sowohl zufällige Standorte (ein Ort, der ohne vorherige Bestimmung oder Freigabe für die Gesundheitsversorgung genutzt wird) als auch spezielle, formal zugeordnete Standorte. Die Standorte können privat, öffentlich, mobil oder feststehend sein.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Beginn",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Beginn",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Ende",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Ende",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Standorttyp",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Standorttyp",
+        "short": "Kategorisierung des Standorttyps, z.B. Fachabteilung, Klinik, zu Hause.",
+        "definition": "Fachabteilung",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Fachabteilungsname",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Fachabteilungsname",
+        "short": "Das Feld enthält die Freitextbeschreibung des Standorts, z.B. Throax-, Herz- und Gefäßchirurgie",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Fachabteilungsschlüssel",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Fachabteilungsschlüssel",
+        "short": "FAB-Schlüssel",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Kommentar",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Abteilungsaufenthalt.Kommentar",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt",
+        "short": "Zur Erfassung der administrativen Aufenthaltsdaten eines Patienten.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Beginn",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Beginn",
+        "short": "Zeitlicher Beginn des Aufenthaltes am beschriebenen Ort.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Ende",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Ende",
+        "short": "Zeitliches Ende des Aufenthaltes am beschriebenen Ort.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/dateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.GrunddesAufenthaltes",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.GrunddesAufenthaltes",
+        "short": "Grund des Aufenthaltes",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort",
+        "short": "Der Standort umfasst sowohl zufällige Standorte (ein Ort, der ohne vorherige Bestimmung oder Freigabe für die Gesundheitsversorgung genutzt wird) als auch spezielle, formal zugeordnete Standorte. Die Standorte können privat, öffentlich, mobil oder feststehend sein.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Standorttyp",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Standorttyp",
+        "short": "Kategorisierung des Standorttyps, z.B. Fachabteilung, Klinik, zu Hause.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Standortbeschreibung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Standortbeschreibung",
+        "short": "Das Feld enthält die Freitextbeschreibung des Standorts, z.B. Throax-, Herz- und Gefäßchirurgie.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string",
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Abteilungsschlüssel",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Abteilungsschlüssel",
+        "short": "Kodierung des Standortes, z.B. der Fachabteilungsschlüssel (z. B. 2000 Thoraxchirurgie).",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code",
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Campus",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Campus",
+        "short": "Eine Gruppe von Gebäuden an anderen Orten, wie ein örtlich entfernter Campus, der außerhalb der Einrichtung liegt, aber zur Institution gehört.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Gebäudegruppe",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Gebäudegruppe",
+        "short": "Ein Gebäude oder Bauwerk. Dazu können Räume, Flure, Flügel, etc. gehören. Es hat möglicherweise keine Wände oder ein Dach, wird aber dennoch als definierter/zugeordneter Raum angesehen.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Ebene",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Ebene",
+        "short": "Die Ebene in einem mehrstöckigen Gebäude/Bauwerk.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Stationkennung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Stationkennung",
+        "short": "Die Station ist ein Bestandteil einer medizinischen Einrichtung, die Räume und andere Arten von Aufenthaltsorten umfasst, z. B. Station 12A. Auch als Raumgruppe erfassbar.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Zimmerkennung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Zimmerkennung",
+        "short": "Ein Ort, der als Zimmer deklariert wurde. Er kann durch Wände oder anderes abgegrenzt sein, muss es aber nicht.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Bettplatzkennung",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.Bettplatzkennung",
+        "short": "Beschreibung des Bettstellplatzes z.B. Bett stand neben dem Fenster oder neben der Tür.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett",
+        "short": "Ein Instrument, ein Gerät, ein Implantat, ein Material oder ähnliches, das für die Bereitstellung von Gesundheitsleistungen verwendet wird. In diesem Zusammenhang umfasst ein medizinisches Gerät eine breite Palette von Geräten, die auf verschiedene physikalische, mechanische, thermische oder ähnliche Weise wirken, schließt jedoch insbesondere Geräte aus, die auf medizinischem Wege wirken, wie zum Beispiel pharmakologische, metabolische oder immunologische Methoden. Der Geltungsbereich umfasst Einweggeräte sowie langlebige oder dauerhafte Geräte, die nachverfolgt, gewartet oder regelmäßig kalibriert werden müssen, wobei zu berücksichtigen ist, dass für jeden Gerätetyp bestimmte Datenaufzeichnungsanforderungen gelten.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett.Gerätename",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett.Gerätename",
+        "short": "Identifizierung des Medizingerätes, bevorzugt durch einen allgemein gebräuchlichen Namen, einer formellen und vollständig beschreibenden Bezeichnung oder falls notwendig anhand einer Klasse oder Kategorie des Gerätes.",
+        "comment": "Dieses Datenelement erfasst den Begriff, die Phrase oder die Kategorie, die in der klinischen Praxis verwendet werden. Zum Beispiel: <Markenname> <Maschine> (XYZ-Audiometer); <Markenname> (14G Jelco IV-Katheter); oder <Markenname / Typ> <Implantat>. Die Codierung mit einer Terminologie ist nach Möglichkeit wünschenswert, auch wenn dies lokal sein kann und von den verfügbaren lokalen Lieferungen abhängt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett.Gerätetyp",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett.Gerätetyp",
+        "short": "Die Kategorie des Medizingeräts.",
+        "comment": "Nicht zutreffend, wenn eine Kategorie bereits unter \"Gerätename\" dokumentiert ist. Beispiel: Wenn das 'Gerät' als 'Harnkatheter' bezeichnet wird; der 'Typ' kann als 'Verweilkatheter' oder 'Kondom' aufgezeichnet werden. Die Codierung mit einer Terminologie ist wünschenswert, sofern dies möglich ist. Dies kann die Verwendung von GTIN- oder EAN-Nummern einschließen.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett.EindeutigeIdentifikationsnummer",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Versorgungsort.DetailszumBett.EindeutigeIdentifikationsnummer",
+        "short": "Eine numerische oder alphanumerische Zeichenfolge, die diesem Gerät in einem bestimmten System zugeordnet ist.",
+        "comment": "Oft als Barcode am Gerät befestigt",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Kommentar",
+        "path": "Use Case Infection Control.Bewegungsdaten.Abteilungsfall.Patientenaufenthalt.Kommentar",
+        "short": "Zusätzliche Kommentare.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur",
+        "path": "Use Case Infection Control.Prozedur",
+        "short": "Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.BerichtID",
+        "path": "Use Case Infection Control.Prozedur.BerichtID",
+        "short": "Identifizierungsmerkmal des Berichts.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.Falllrelation",
+        "path": "Use Case Infection Control.Prozedur.Falllrelation",
+        "short": "Zur Erfassung von Details zur Identifikation eines Falls im Gesundheitswesen.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.ProzedurKodiert",
+        "path": "Use Case Infection Control.Prozedur.ProzedurKodiert",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.ProzedurKodiert.KatalogtextProzedurencode",
+        "path": "Use Case Infection Control.Prozedur.ProzedurKodiert.KatalogtextProzedurencode",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.ProzedurKodiert.Codesystem",
+        "path": "Use Case Infection Control.Prozedur.ProzedurKodiert.Codesystem",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Identifier"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.ProzedurKodiert.Prozedurencode",
+        "path": "Use Case Infection Control.Prozedur.ProzedurKodiert.Prozedurencode",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.Freitextbeschreibung",
+        "path": "Use Case Infection Control.Prozedur.Freitextbeschreibung",
+        "short": "Beschreibung der Prozedur, angepasst an den \"Pathway\"-Verlaufsschritt.",
+        "comment": "Zum Beispiel: Beschreibung der Durchführung und der Ergebnisse dieser Prozedur, des abgebrochenen Versuchs oder der Stornierung der Prozedur",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.Lokalisation",
+        "path": "Use Case Infection Control.Prozedur.Lokalisation",
+        "short": "Anatomische Lokalisation, an der die Prozedur durchgeführt wird.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/CodeableConcept"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.AnatomischeLinie",
+        "path": "Use Case Infection Control.Prozedur.AnatomischeLinie",
+        "short": "Zusätzliches Detail unter Verwendung theoretischer Linien, die durch anatomische Strukturen erweitert werden können, um einen einheitlichen Bezugspunkt auf dem menschlichen Körper zu erhalten.",
+        "definition": "Mittellinie  [Vertikal verlaufende Linie, die den Körper in eine linke und rechte Seite teilt und durch den Kopf, das Rückenmark und den Nabel verläuft. Alternativ kann es sich auf eine Linie beziehen, die ein Körperteil in zwei gleiche Teile teilt, zum Beispiel einen Zeh/Finger.]\r\nmittlere Axillarlinie  [Linie, die senkrecht zur Körperoberfläche verläuft und durch den Scheitelpunkt der Achselhöhle geht.]\r\nvordere Axillarlinie  [Die Linie verläuft senkrecht über die Körperoberfläche und verläuft durch die vordere Hautfalte der Achselhöhle.]\r\nhintere Axillarlinie  [Linie, die senkrecht über die Körperoberfläche verläuft und durch die hintere Achselhaut führt.]\r\nMedioklavikularlinie  [Linie, die senkrecht über die Körperoberfläche verläuft, parallel zur Mittellinie und durch den Mittelpunkt der Klavikula führt.]\r\nMittelere Pupillarlinie  [Die Linie verläuft vertikal durch den Mittelpunkt der Pupille, wenn man direkt nach vorne schaut.]\r\nMittlere Skapularlinie  [Die Linie verläuft senkrecht über die hintere Körperoberfläche, parallel zur Mittellinie und verläuft durch den unteren Punkt des Schulterblattes.]",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.Prozedurentyp",
+        "path": "Use Case Infection Control.Prozedur.Prozedurentyp",
+        "short": "Die Art der Prozedur.",
+        "definition": "Ambulant\r\nStationär",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.Grund",
+        "path": "Use Case Infection Control.Prozedur.Grund",
+        "short": "Grund, warum die angegebene Aktivität für diese Prozedur durchgeführt wurde.",
+        "definition": "Diagnostisch\r\nTherapeutisch\r\nTheragnostisch\r\nAndere\r\n[...]",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/code"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Use Case Infection Control.Prozedur.BegründungvonAusnahmen",
+        "path": "Use Case Infection Control.Prozedur.BegründungvonAusnahmen",
+        "short": "Zusätzliche Beschreibung der Aktivität oder der \"Pathway\"-Verlaufsschritte, die in anderen Bereichen nicht erfasst wurden",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/string"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

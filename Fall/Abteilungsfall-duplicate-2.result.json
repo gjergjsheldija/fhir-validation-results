@@ -1,0 +1,29 @@
+[
+  {
+    "severity": "warning",
+    "code": "processing",
+    "diagnostics": "dom-6: A resource should have narrative for robust management [text.div.exists()]",
+    "location": [
+      "StructureDefinition",
+      "Line 1, Col 2"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "Canonical URLs must be absolute URLs if they are not fragment references (Encounter) ",
+    "location": [
+      "StructureDefinition.differential.element[0].constraint[0].source",
+      "Line 1, Col 1384"
+    ]
+  },
+  {
+    "severity": "error",
+    "code": "processing",
+    "diagnostics": "Canonical URLs must be absolute URLs if they are not fragment references (Encounter) ",
+    "location": [
+      "StructureDefinition.differential.element[0].constraint[1].source",
+      "Line 1, Col 1736"
+    ]
+  }
+]
